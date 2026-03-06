@@ -9,6 +9,10 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -32,20 +36,20 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 28px 70px;
-      background: rgba(255,255,255,0.16);
-      backdrop-filter: blur(3px);
+      padding: 20px 60px;
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(4px);
     }
 
-    .logo {
-      font-size: 54px;
-      font-weight: 800;
-      letter-spacing: 1px;
+    .logo img {
+      height: 72px;
+      width: auto;
+      display: block;
     }
 
     .nav-links {
       display: flex;
-      gap: 36px;
+      gap: 34px;
       flex-wrap: wrap;
     }
 
@@ -53,17 +57,17 @@
       color: white;
       text-decoration: none;
       font-size: 18px;
-      font-weight: 500;
+      font-weight: 600;
     }
 
     .hero-content {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 140px 70px 100px;
+      padding: 130px 60px 100px;
     }
 
     .hero-text {
-      max-width: 560px;
+      max-width: 620px;
     }
 
     .hero h1 {
@@ -75,14 +79,14 @@
 
     .hero p {
       font-size: 24px;
-      line-height: 1.6;
-      margin: 0 0 36px;
+      line-height: 1.5;
+      margin: 0 0 24px;
     }
 
     .hero-sub {
       font-size: 20px;
       line-height: 1.7;
-      margin-bottom: 40px;
+      margin-bottom: 36px;
     }
 
     .btn {
@@ -99,7 +103,7 @@
     .section {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 80px 70px;
+      padding: 80px 60px;
     }
 
     .section h2 {
@@ -136,6 +140,7 @@
     .card p {
       font-size: 18px;
       margin-bottom: 0;
+      line-height: 1.7;
     }
 
     .projects-grid {
@@ -169,6 +174,12 @@
       font-size: 28px;
     }
 
+    .project-card p {
+      font-size: 18px;
+      line-height: 1.7;
+      margin: 0;
+    }
+
     .contact-box {
       background: #16284a;
       color: white;
@@ -178,6 +189,12 @@
 
     .contact-box h2 {
       color: white;
+      margin-top: 0;
+    }
+
+    .contact-box p {
+      margin: 12px 0;
+      font-size: 19px;
     }
 
     .footer {
@@ -195,11 +212,11 @@
       }
 
       .hero h1 {
-        font-size: 52px;
+        font-size: 50px;
       }
 
       .navbar {
-        padding: 22px 24px;
+        padding: 20px 24px;
         flex-direction: column;
         gap: 18px;
       }
@@ -213,6 +230,10 @@
       .hero-content {
         padding-top: 90px;
       }
+
+      .logo img {
+        height: 60px;
+      }
     }
   </style>
 </head>
@@ -220,7 +241,10 @@
 
   <section class="hero" id="home">
     <div class="navbar">
-      <div class="logo">PROFACADE</div>
+      <div class="logo">
+        <img src="ProFacade%20LOGO.png" alt="Profacade Exterior Solutions">
+      </div>
+
       <div class="nav-links">
         <a href="#about">About</a>
         <a href="#services">Services</a>
@@ -272,24 +296,26 @@
     <h2>Projects</h2>
     <div class="projects-grid">
       <div class="project-card">
-        <img src="https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1200&q=80" alt="High-rise project">
+        <img src="https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1200&q=80" alt="1818 Alberni">
         <div class="content">
-          <h3>High-Rise Residential</h3>
-          <p>Window wall and curtain wall installation for multi-storey residential developments.</p>
+          <h3>1818 Alberni</h3>
+          <p>Window wall and exterior installation coordination for a high-rise residential project.</p>
         </div>
       </div>
+
       <div class="project-card">
-        <img src="https://images.unsplash.com/photo-1448630360428-65456885c650?auto=format&fit=crop&w=1200&q=80" alt="Commercial tower">
+        <img src="https://images.unsplash.com/photo-1448630360428-65456885c650?auto=format&fit=crop&w=1200&q=80" alt="Lucent">
         <div class="content">
-          <h3>Commercial Towers</h3>
-          <p>Exterior glazing installation with site coordination and field-driven execution.</p>
+          <h3>Lucent</h3>
+          <p>Curtain wall and façade installation support with field-focused execution and coordination.</p>
         </div>
       </div>
+
       <div class="project-card">
-        <img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1200&q=80" alt="Canopy installation">
+        <img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1200&q=80" alt="121 Boren">
         <div class="content">
-          <h3>Architectural Features</h3>
-          <p>Glass canopy and façade feature installation for modern building envelopes.</p>
+          <h3>121 Boren</h3>
+          <p>Exterior glazing and installation planning for a multi-storey building envelope project.</p>
         </div>
       </div>
     </div>
