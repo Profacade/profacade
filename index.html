@@ -304,7 +304,6 @@
     .target-card,
     .card,
     .project-item,
-    .contact-side,
     .contact-panel {
       background: var(--white);
       border: 1px solid var(--border);
@@ -728,8 +727,7 @@
           <a href="#about">About</a>
           <a href="#services">Services</a>
           <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
-          <a href="#contact" class="quote-btn">Request a Quote</a>
+          <a href="#contact" class="quote-btn quote-link">Request a Quote</a>
         </nav>
       </div>
     </div>
@@ -739,10 +737,12 @@
     <div class="container hero-content">
       <div class="hero-text">
         <div class="eyebrow">Independent Façade Installation Partner</div>
-        <h1>You Source It!<br>We Install It!</h1>
-        <p class="hero-lead">For owner-supply projects, window suppliers, and international manufacturers entering the Canadian market.</p>
+        <h1>You Source It.<br>We Install It.</h1>
+        <p class="hero-lead">
+          Independent installation partner for aluminum window wall, curtain wall, and glass canopy systems.
+        </p>
         <div class="hero-sub">
-          Profacade provides professional installation for window wall, curtain wall, glass canopy, and related exterior façade systems — whether the product is sourced locally or imported from Asia or Europe.
+          For owner-supply projects, window suppliers, and international manufacturers entering the Canadian market.
         </div>
 
         <ul class="hero-points">
@@ -753,7 +753,7 @@
         </ul>
 
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#contact">Request Installation Quote</a>
+          <a class="btn btn-primary quote-link" href="#">Request Installation Quote</a>
           <a class="btn btn-secondary" href="#projects">View Projects</a>
         </div>
       </div>
@@ -778,7 +778,7 @@
           <h3>Why Clients Work With Us</h3>
           <ul>
             <li>Installation support for both locally sourced and imported façade systems</li>
-            <li>Strong fit for owner-supply procurement structures and supplier-led projects</li>
+            <li>Strong fit for general installation packages, supplier-led projects, and owner-supply procurement structures</li>
             <li>Practical coordination with general contractors, manufacturers, and site teams</li>
             <li>Reliable field execution for high-rise and technically demanding installations</li>
           </ul>
@@ -909,13 +909,13 @@
 
           <ul class="contact-points">
             <li>Independent installation support for local and imported systems</li>
-            <li>Strong fit for owner-supply and supplier-led project structures</li>
+            <li>Strong fit for general installation packages, supplier-led scopes, and owner-supply projects requiring experienced coordination</li>
             <li>Practical site coordination, sequencing, and field execution</li>
             <li>Professional support for pricing inquiries, tender invitations, and project discussions</li>
           </ul>
 
           <div class="contact-actions">
-            <a class="btn btn-primary" href="mailto:estimating@profacade.ca?subject=Request%20for%20Installation%20Quote">Request Installation Quote</a>
+            <a class="btn btn-primary quote-link" href="#">Request Installation Quote</a>
             <a class="btn btn-secondary" href="mailto:info@profacade.ca?subject=Project%20Inquiry">General Inquiry</a>
           </div>
         </div>
@@ -923,13 +923,13 @@
         <div class="contact-panel">
           <h3>Start Your Inquiry</h3>
           <p class="contact-mini">
-            Send us your project details, product type, and expected schedule. We will review your inquiry and follow up regarding installation scope and next steps.
+            Send us your project details, product type, building scale, available documents, and expected schedule. We will review your inquiry and follow up regarding installation scope and next steps.
           </p>
 
           <div class="info-list">
             <div class="info-item">
               <strong>Best For</strong>
-              <span>Owner-supply projects, supplier-led packages, and imported façade systems</span>
+              <span>General façade installation packages, supplier-led projects, imported systems, and owner-supply projects requiring experienced coordination</span>
             </div>
 
             <div class="info-item">
@@ -948,7 +948,7 @@
             </div>
           </div>
 
-          <a class="btn btn-primary" href="mailto:estimating@profacade.ca?subject=Request%20for%20Installation%20Quote&body=Company%20Name%3A%0AContact%20Name%3A%0AEmail%3A%0APhone%3A%0AProject%20Name%3A%0AProject%20Location%3A%0AProduct%20Type%3A%0AProject%20Stage%3A%0ARequired%20Installation%20Scope%3A%0AEstimated%20Start%20Date%3A%0AMessage%3A%0A">Get a Quote</a>
+          <a class="btn btn-primary quote-link" href="#">Get a Quote</a>
         </div>
       </div>
     </div>
@@ -957,5 +957,44 @@
   <footer class="footer">
     © 2026 Profacade Exterior Solutions Inc. All rights reserved.
   </footer>
+
+  <script>
+    const quoteMailto =
+      "mailto:estimating@profacade.ca" +
+      "?subject=Request%20for%20Installation%20Quote" +
+      "&body=Please%20provide%20the%20following%20project%20information%20so%20we%20can%20review%20the%20installation%20scope%20and%20approximate%20quantity.%0A%0A" +
+      "Company%20Name:%0A" +
+      "Contact%20Name:%0A" +
+      "Title%20/%20Position:%0A" +
+      "Email:%0A" +
+      "Phone:%0A%0A" +
+      "Project%20Name:%0A" +
+      "Project%20Location:%0A" +
+      "Project%20Type:%0A" +
+      "Building%20Scale%20(No.%20of%20Towers%20/%20Floors%20/%20Podium%20/%20Approx.%20Building%20Size):%0A" +
+      "Approximate%20Installation%20Quantity%20(Window%20Count%20/%20Sqft%20/%20Elevation%20Scope%20/%20Number%20of%20Openings%20if%20known):%0A%0A" +
+      "System%20Type%20(Window%20Wall%20/%20Curtain%20Wall%20/%20Glass%20Canopy%20/%20Other):%0A" +
+      "Required%20Installation%20Scope%20(Install%20Only%20/%20Glazing%20/%20Canopy%20/%20Full%20Installation%20Scope%20/%20Other):%0A" +
+      "System%20Supplied%20By%20(Owner%20/%20GC%20/%20Supplier%20/%20Manufacturer):%0A" +
+      "Product%20Source%20(Local%20/%20Asia%20/%20Europe%20/%20Other):%0A%0A" +
+      "Project%20Stage%20(Budget%20/%20Tender%20/%20Pre-Construction%20/%20Shop%20Drawing%20/%20Construction%20/%20Revision):%0A" +
+      "Bid%20Due%20Date:%0A" +
+      "Estimated%20Installation%20Start%20Date:%0A" +
+      "Special%20Site%20Conditions%20/%20Access%20Requirements:%0A%0A" +
+      "Available%20Documents:%0A" +
+      "-%20Architectural%20Drawings:%0A" +
+      "-%20Shop%20Drawings:%0A" +
+      "-%20Specifications:%0A" +
+      "-%20Master%20Schedule:%0A" +
+      "-%20Structural%20Details:%0A" +
+      "-%20Other:%0A%0A" +
+      "Message%20/%20Additional%20Notes:%0A";
+
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll(".quote-link").forEach(function (link) {
+        link.setAttribute("href", quoteMailto);
+      });
+    });
+  </script>
 </body>
 </html>
