@@ -6,6 +6,22 @@
   <title>Profacade Exterior Solutions</title>
 
   <style>
+    :root {
+      --navy: #10233f;
+      --navy-2: #16325c;
+      --blue: #4f8df7;
+      --blue-dark: #3777e6;
+      --text: #1c1c1c;
+      --muted: #5e6b7a;
+      --bg: #f5f7fa;
+      --white: #ffffff;
+      --border: #e7ebf0;
+      --shadow: 0 10px 30px rgba(16, 35, 63, 0.08);
+      --shadow-soft: 0 6px 18px rgba(16, 35, 63, 0.06);
+      --radius: 16px;
+      --max: 1200px;
+    }
+
     * {
       box-sizing: border-box;
     }
@@ -17,263 +33,485 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      color: #1c1c1c;
-      background: #f5f7fa;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
     }
 
     a {
       text-decoration: none;
     }
 
-    .hero {
-      position: relative;
-      min-height: 760px;
-      background:
-        linear-gradient(rgba(8, 20, 45, 0.52), rgba(8, 20, 45, 0.52)),
-        url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80');
-      background-size: cover;
-      background-position: center;
-      color: white;
+    .container {
+      width: 100%;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 60px;
+    }
+
+    /* Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
     }
 
     .navbar {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 60px;
-  background: rgba(8, 20, 45, 0.9);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-}
+      min-height: 92px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
 
     .logo {
       display: flex;
       align-items: center;
+      flex-shrink: 0;
     }
 
     .logo img {
-  height: 95px;
-  width: auto;
-  display: block;
-}
+      height: 66px;
+      width: auto;
+    }
 
     .nav-links {
       display: flex;
+      align-items: center;
       gap: 34px;
       flex-wrap: wrap;
     }
 
     .nav-links a {
-      color: white;
+      color: var(--navy);
       font-size: 17px;
-      font-weight: 600;
-      transition: opacity 0.2s ease;
+      font-weight: 700;
+      letter-spacing: 0.1px;
+      transition: color 0.2s ease, opacity 0.2s ease;
     }
 
     .nav-links a:hover {
-      opacity: 0.8;
+      color: var(--blue-dark);
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      min-height: 780px;
+      background:
+        linear-gradient(rgba(8, 20, 45, 0.58), rgba(8, 20, 45, 0.52)),
+        url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+      color: var(--white);
+      display: flex;
+      align-items: center;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        90deg,
+        rgba(8, 20, 45, 0.42) 0%,
+        rgba(8, 20, 45, 0.18) 45%,
+        rgba(8, 20, 45, 0.08) 100%
+      );
+      pointer-events: none;
     }
 
     .hero-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 140px 60px 120px;
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      padding: 110px 0 120px;
     }
 
     .hero-text {
-      max-width: 680px;
+      max-width: 760px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 18px;
+      padding: 8px 14px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      background: rgba(255, 255, 255, 0.08);
     }
 
     .hero h1 {
-      font-size: 78px;
-      line-height: 0.98;
-      margin: 0 0 26px;
+      margin: 0 0 22px;
+      font-size: 84px;
+      line-height: 0.95;
       font-weight: 800;
-      letter-spacing: -1.5px;
+      letter-spacing: -2px;
     }
 
-    .hero p {
-      font-size: 26px;
-      line-height: 1.5;
-      margin: 0 0 22px;
+    .hero-lead {
+      margin: 0 0 18px;
+      font-size: 27px;
+      line-height: 1.45;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.96);
     }
 
     .hero-sub {
-      font-size: 21px;
-      line-height: 1.7;
-      margin-bottom: 38px;
-      max-width: 620px;
+      margin: 0 0 34px;
+      max-width: 700px;
+      font-size: 20px;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
     }
 
     .btn {
-      display: inline-block;
-      padding: 16px 30px;
-      background: #4f8df7;
-      color: white;
-      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 0 26px;
+      border-radius: 10px;
+      font-size: 16px;
       font-weight: 700;
-      font-size: 17px;
-      transition: transform 0.2s ease, opacity 0.2s ease;
+      transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+      cursor: pointer;
     }
 
-    .btn:hover {
+    .btn-primary {
+      background: var(--blue);
+      color: var(--white);
+      box-shadow: 0 10px 22px rgba(79, 141, 247, 0.28);
+    }
+
+    .btn-primary:hover {
+      background: var(--blue-dark);
       transform: translateY(-1px);
-      opacity: 0.95;
     }
 
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-1px);
+    }
+
+    /* Sections */
     .section {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 90px 60px;
+      padding: 100px 0;
     }
 
-    .section h2 {
-      font-size: 42px;
-      margin: 0 0 24px;
-      color: #16284a;
-      letter-spacing: -0.5px;
+    .section-title {
+      margin: 0 0 16px;
+      font-size: 44px;
+      line-height: 1.05;
+      color: var(--navy);
+      letter-spacing: -1px;
     }
 
-    .section p {
-      font-size: 20px;
-      line-height: 1.8;
+    .section-intro {
       margin: 0;
+      max-width: 900px;
+      font-size: 20px;
+      line-height: 1.85;
+      color: var(--muted);
     }
 
+    /* About */
+    .about-wrap {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 32px;
+      align-items: stretch;
+      margin-top: 34px;
+    }
+
+    .about-card,
+    .about-highlight {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .about-card {
+      padding: 38px;
+    }
+
+    .about-card p {
+      margin: 0;
+      font-size: 19px;
+      line-height: 1.9;
+      color: var(--muted);
+    }
+
+    .about-highlight {
+      padding: 34px;
+      background: linear-gradient(180deg, #17335f 0%, #10233f 100%);
+      color: var(--white);
+    }
+
+    .about-highlight h3 {
+      margin: 0 0 16px;
+      font-size: 28px;
+      line-height: 1.1;
+    }
+
+    .about-highlight ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .about-highlight li {
+      margin-bottom: 12px;
+      font-size: 17px;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    /* Services */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 28px;
-      margin-top: 34px;
+      margin-top: 36px;
     }
 
     .card {
-      background: white;
-      border-radius: 12px;
-      padding: 32px;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
-      border: 1px solid rgba(22, 40, 74, 0.06);
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 34px 30px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--border);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .card-number {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      background: rgba(79, 141, 247, 0.12);
+      color: var(--blue-dark);
+      font-size: 15px;
+      font-weight: 800;
     }
 
     .card h3 {
-      margin: 0 0 12px;
+      margin: 0 0 14px;
       font-size: 28px;
-      color: #16284a;
-    }
-
-    .card p {
-      font-size: 18px;
-      line-height: 1.7;
-    }
-
-    .projects-list {
-      margin-top: 36px;
-      display: flex;
-      flex-direction: column;
-      gap: 34px;
-    }
-
-    .project-item {
-      background: white;
-      border-radius: 12px;
-      padding: 28px 30px;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
-      border-left: 4px solid #16325c;
-    }
-
-    .project-item h3 {
-      font-size: 30px;
-      margin: 0 0 12px;
-      color: #16284a;
+      line-height: 1.1;
+      color: var(--navy);
       letter-spacing: -0.4px;
     }
 
-    .project-item p {
+    .card p {
+      margin: 0;
       font-size: 18px;
-      line-height: 1.7;
-      margin: 0 0 10px;
+      line-height: 1.8;
+      color: var(--muted);
     }
 
-    .client {
-      font-weight: 700;
-      color: #16284a;
-      margin-top: 8px;
+    /* Projects */
+    .projects-list {
+      margin-top: 38px;
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
+    }
+
+    .project-item {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 30px 32px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--navy-2);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .project-item:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+
+    .project-status {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      background: rgba(22, 50, 92, 0.08);
+      color: var(--navy-2);
+    }
+
+    .project-item h3 {
+      margin: 0 0 12px;
+      font-size: 31px;
+      line-height: 1.1;
+      color: var(--navy);
+      letter-spacing: -0.5px;
+    }
+
+    .project-item p {
+      margin: 0 0 14px;
+      font-size: 18px;
+      line-height: 1.8;
+      color: var(--muted);
     }
 
     .project-link {
       display: inline-block;
-      margin-top: 8px;
-      color: #4f8df7;
+      margin-top: 4px;
+      color: var(--blue-dark);
       font-weight: 700;
-      font-size: 17px;
+      font-size: 16px;
     }
 
     .project-link:hover {
       text-decoration: underline;
     }
 
+    /* Contact */
     .contact-box {
-      background: #16284a;
-      color: white;
-      border-radius: 12px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      background: linear-gradient(135deg, #16325c 0%, #10233f 100%);
+      color: var(--white);
+      border-radius: 20px;
       padding: 42px;
+      box-shadow: var(--shadow);
     }
 
-    .contact-box h2 {
-      color: white;
-      margin: 0 0 18px;
-      font-size: 40px;
+    .contact-main h2 {
+      margin: 0 0 16px;
+      font-size: 42px;
+      line-height: 1.05;
+      letter-spacing: -0.8px;
     }
 
-    .contact-box p {
-      margin: 10px 0;
+    .contact-main p {
+      margin: 0;
       font-size: 19px;
-      line-height: 1.7;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.92);
     }
 
+    .contact-info {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 16px;
+      padding: 26px 24px;
+    }
+
+    .contact-info h3 {
+      margin: 0 0 18px;
+      font-size: 22px;
+      line-height: 1.2;
+    }
+
+    .contact-line {
+      margin-bottom: 14px;
+      font-size: 17px;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.95);
+    }
+
+    .contact-line strong {
+      display: inline-block;
+      min-width: 105px;
+      color: var(--white);
+    }
+
+    .contact-line a {
+      color: var(--white);
+    }
+
+    .contact-line a:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer */
     .footer {
+      margin-top: 0;
       text-align: center;
-      padding: 30px 20px;
-      background: #0f1d36;
-      color: white;
+      padding: 28px 20px;
+      background: #0d1a30;
+      color: rgba(255, 255, 255, 0.88);
       font-size: 15px;
     }
 
-    @media (max-width: 1000px) {
-      .services-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .navbar {
-        padding: 14px 24px;
-      }
-
-      .hero-content,
-      .section {
-        padding-left: 24px;
-        padding-right: 24px;
-      }
-
-      .hero-content {
-        padding-top: 100px;
-        padding-bottom: 90px;
+    /* Responsive */
+    @media (max-width: 1100px) {
+      .container {
+        padding: 0 28px;
       }
 
       .hero h1 {
-        font-size: 52px;
+        font-size: 66px;
       }
 
-      .hero p {
-        font-size: 22px;
+      .hero-lead {
+        font-size: 24px;
       }
 
-      .hero-sub {
-        font-size: 18px;
+      .section-title {
+        font-size: 38px;
+      }
+
+      .about-wrap,
+      .contact-box,
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .navbar {
+        padding: 18px 0;
+        min-height: auto;
+        align-items: flex-start;
+        flex-direction: column;
       }
 
       .logo img {
-        height: 52px;
+        height: 56px;
       }
 
       .nav-links {
@@ -284,148 +522,223 @@
         font-size: 15px;
       }
 
-      .section h2 {
-        font-size: 34px;
+      .hero {
+        min-height: 700px;
       }
 
-      .project-item h3 {
-        font-size: 26px;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 14px;
+      .hero-content {
+        padding: 90px 0 100px;
       }
 
       .hero h1 {
-        font-size: 44px;
+        font-size: 48px;
+        letter-spacing: -1.2px;
+      }
+
+      .hero-lead {
+        font-size: 21px;
+      }
+
+      .hero-sub {
+        font-size: 17px;
+      }
+
+      .section {
+        padding: 78px 0;
+      }
+
+      .section-title {
+        font-size: 33px;
+      }
+
+      .section-intro,
+      .about-card p,
+      .card p,
+      .project-item p,
+      .contact-main p {
+        font-size: 17px;
+      }
+
+      .card,
+      .project-item,
+      .about-card,
+      .about-highlight,
+      .contact-box {
+        padding: 28px 24px;
+      }
+
+      .contact-main h2 {
+        font-size: 34px;
       }
 
       .btn {
         width: 100%;
-        text-align: center;
+      }
+
+      .hero-actions {
+        align-items: stretch;
       }
     }
   </style>
 </head>
 
 <body>
+  <header class="site-header">
+    <div class="container">
+      <div class="navbar">
+        <a href="#home" class="logo">
+          <img src="logo.png" alt="Profacade Exterior Solutions" />
+        </a>
 
-  <section class="hero" id="home">
-    <div class="navbar">
-      <div class="logo">
-        <img src="logo.png.png" alt="Profacade Exterior Solutions">
-      </div>
-
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+        <nav class="nav-links">
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
       </div>
     </div>
+  </header>
 
-    <div class="hero-content">
+  <section class="hero" id="home">
+    <div class="container hero-content">
       <div class="hero-text">
+        <div class="eyebrow">Exterior Installation Specialists</div>
         <h1>Precision<br>Installation</h1>
-        <p>Window Wall, Curtain Wall, and Glass Canopy Systems</p>
+        <p class="hero-lead">Window Wall, Curtain Wall, and Glass Canopy Systems</p>
         <div class="hero-sub">
-          Professional exterior installation for high-rise residential and commercial projects.
+          Professional exterior installation for high-rise residential and commercial projects, with a focus on reliable execution, practical coordination, and quality workmanship.
         </div>
-        <a class="btn" href="#contact">Contact Us</a>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contact">Contact Us</a>
+          <a class="btn btn-secondary" href="#projects">View Projects</a>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="section" id="about">
-    <h2>About Profacade</h2>
-    <p>
-      Profacade Exterior Solutions Inc. specializes in the professional installation of
-      window wall, curtain wall, and glass canopy systems. We focus on reliable field
-      execution, quality workmanship, and practical site coordination for high-rise
-      residential and commercial construction projects.
-    </p>
+    <div class="container">
+      <h2 class="section-title">About Profacade</h2>
+      <p class="section-intro">
+        Profacade Exterior Solutions Inc. specializes in the professional installation of window wall, curtain wall, and glass canopy systems for high-rise residential and commercial construction projects.
+      </p>
+
+      <div class="about-wrap">
+        <div class="about-card">
+          <p>
+            We focus on dependable field execution, disciplined site coordination, and quality-driven installation. Our approach is practical, organized, and built around the realities of active construction sites, helping projects move forward with clear communication and reliable performance.
+          </p>
+        </div>
+
+        <div class="about-highlight">
+          <h3>What We Deliver</h3>
+          <ul>
+            <li>Reliable installation of façade systems for high-rise projects</li>
+            <li>Practical coordination with site teams and project stakeholders</li>
+            <li>Strong attention to workmanship, sequencing, and execution</li>
+            <li>Professional support for bidding, planning, and installation delivery</li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section class="section" id="services">
-    <h2>Services</h2>
+    <div class="container">
+      <h2 class="section-title">Services</h2>
+      <p class="section-intro">
+        We provide installation services tailored to the needs of complex exterior envelope and façade scopes.
+      </p>
 
-    <div class="services-grid">
-      <div class="card">
-        <h3>Window Wall</h3>
-        <p>
-          Professional installation of window wall systems for high-rise residential and
-          mixed-use developments.
-        </p>
-      </div>
+      <div class="services-grid">
+        <div class="card">
+          <div class="card-number">01</div>
+          <h3>Window Wall</h3>
+          <p>
+            Professional installation of window wall systems for high-rise residential and mixed-use developments, with careful attention to sequencing, access, and site conditions.
+          </p>
+        </div>
 
-      <div class="card">
-        <h3>Curtain Wall</h3>
-        <p>
-          Field installation of curtain wall systems including site coordination, layout,
-          sequencing, and exterior glazing support.
-        </p>
-      </div>
+        <div class="card">
+          <div class="card-number">02</div>
+          <h3>Curtain Wall</h3>
+          <p>
+            Field installation of curtain wall systems including layout, coordination, installation sequencing, and exterior glazing support for demanding project environments.
+          </p>
+        </div>
 
-      <div class="card">
-        <h3>Glass Canopy</h3>
-        <p>
-          Installation of exterior glass canopy systems for entrances, podiums, and
-          architectural façade features.
-        </p>
+        <div class="card">
+          <div class="card-number">03</div>
+          <h3>Glass Canopy</h3>
+          <p>
+            Installation of exterior glass canopy systems for entrances, podiums, and architectural façade features, executed with a practical focus on safety and detailing.
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="section" id="projects">
-    <h2>Featured Projects</h2>
+    <div class="container">
+      <h2 class="section-title">Featured Projects</h2>
+      <p class="section-intro">
+        Selected projects that reflect our experience in high-rise façade installation and exterior system execution.
+      </p>
 
-    <div class="projects-list">
-      <div class="project-item">
-        <h3>Lucent</h3>
-        <p>
-          High-rise residential tower located in downtown Vancouver. 
-Profacade is currently installing the window wall, curtain wall, and glass canopy systems for this project.
-        </p>
-        <a class="project-link" href="https://www.landaglobal.com/lucent/" target="_blank">View Project →</a>
-      </div>
+      <div class="projects-list">
+        <div class="project-item">
+          <div class="project-status">Current Project</div>
+          <h3>Lucent</h3>
+          <p>
+            High-rise residential tower located in downtown Vancouver. Profacade is currently installing the window wall, curtain wall, and glass canopy systems for this project.
+          </p>
+          <a class="project-link" href="https://www.landaglobal.com/lucent/" target="_blank">View Project →</a>
+        </div>
 
-      <div class="project-item">
-        <h3>1818 Alberni</h3>
-        <p>
-          Luxury residential tower designed by Kengo Kuma, located in downtown Vancouver.
-Profacade is currently installing the window wall, curtain wall, and glass canopy systems for this project.
-        </p>
-        <a class="project-link" href="https://www.landaglobal.com/1818alberni/" target="_blank">View Project →</a>
-      </div>
+        <div class="project-item">
+          <div class="project-status">Current Project</div>
+          <h3>1818 Alberni</h3>
+          <p>
+            Luxury residential tower designed by Kengo Kuma, located in downtown Vancouver. Profacade is currently installing the window wall, curtain wall, and glass canopy systems for this project.
+          </p>
+          <a class="project-link" href="https://www.landaglobal.com/1818alberni/" target="_blank">View Project →</a>
+        </div>
 
-      <div class="project-item">
-        <h3>Raphael – Alma &amp; 10th</h3>
-        <p>
-          Premium residential development located in Vancouver’s Point Grey neighborhood. 
-Profacade completed the installation of the window wall, curtain wall, and glass canopy systems for this project.
-        </p>
-        <a class="project-link" href="https://www.landaglobal.com/projects/alma-10th/" target="_blank">View Project →</a>
+        <div class="project-item">
+          <div class="project-status">Completed Project</div>
+          <h3>Raphael – Alma &amp; 10th</h3>
+          <p>
+            Premium residential development located in Vancouver’s Point Grey neighborhood. Profacade completed the installation of the window wall, curtain wall, and glass canopy systems for this project.
+          </p>
+          <a class="project-link" href="https://www.landaglobal.com/projects/alma-10th/" target="_blank">View Project →</a>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="section" id="contact">
-    <div class="contact-box">
-      <h2>Contact</h2>
-      <p>Email: j.jeon@profacade.ca</p>
-      <p>
-        Contact us for project inquiries, bidding opportunities, and installation coordination.
-      </p>
+    <div class="container">
+      <div class="contact-box">
+        <div class="contact-main">
+          <h2>Contact</h2>
+          <p>
+            Contact us for project inquiries, bidding opportunities, tender requests, and installation coordination for upcoming developments.
+          </p>
+        </div>
+
+        <div class="contact-info">
+          <h3>Get in Touch</h3>
+          <div class="contact-line"><strong>General:</strong> <a href="mailto:info@profacade.ca">info@profacade.ca</a></div>
+          <div class="contact-line"><strong>Estimating:</strong> <a href="mailto:estimating@profacade.ca">estimating@profacade.ca</a></div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <div class="footer">
+  <footer class="footer">
     © 2026 Profacade Exterior Solutions Inc. All rights reserved.
-  </div>
-
+  </footer>
 </body>
 </html>
