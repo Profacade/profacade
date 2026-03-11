@@ -9,14 +9,16 @@
     :root {
       --navy: #10233f;
       --navy-2: #16325c;
+      --navy-3: #28466f;
       --blue: #4f8df7;
       --blue-dark: #3777e6;
       --text: #1c1c1c;
       --muted: #5e6b7a;
       --bg: #f5f7fa;
+      --bg-soft: #eef3f8;
       --white: #ffffff;
       --border: #e7ebf0;
-      --shadow: 0 10px 30px rgba(16, 35, 63, 0.08);
+      --shadow: 0 12px 30px rgba(16, 35, 63, 0.10);
       --shadow-soft: 0 6px 18px rgba(16, 35, 63, 0.06);
       --radius: 16px;
     }
@@ -60,7 +62,6 @@
       padding: 0 24px;
     }
 
-    /* Header */
     .site-header {
       position: sticky;
       top: 0;
@@ -131,12 +132,11 @@
       color: var(--white) !important;
     }
 
-    /* Hero */
     .hero {
       position: relative;
-      min-height: 780px;
+      min-height: 790px;
       background:
-        linear-gradient(rgba(8, 20, 45, 0.58), rgba(8, 20, 45, 0.52)),
+        linear-gradient(rgba(8, 20, 45, 0.62), rgba(8, 20, 45, 0.56)),
         url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80');
       background-size: cover;
       background-position: center;
@@ -151,9 +151,9 @@
       inset: 0;
       background: linear-gradient(
         90deg,
-        rgba(8, 20, 45, 0.42) 0%,
-        rgba(8, 20, 45, 0.18) 45%,
-        rgba(8, 20, 45, 0.08) 100%
+        rgba(8, 20, 45, 0.50) 0%,
+        rgba(8, 20, 45, 0.22) 48%,
+        rgba(8, 20, 45, 0.10) 100%
       );
       pointer-events: none;
     }
@@ -162,18 +162,18 @@
       position: relative;
       z-index: 1;
       width: 100%;
-      padding: 110px 0 120px;
+      padding: 120px 0 120px;
     }
 
     .hero-text {
-      max-width: 760px;
+      max-width: 820px;
     }
 
     .eyebrow {
       display: inline-block;
       margin-bottom: 18px;
       padding: 8px 14px;
-      border: 1px solid rgba(255, 255, 255, 0.22);
+      border: 1px solid rgba(255, 255, 255, 0.24);
       border-radius: 999px;
       font-size: 13px;
       font-weight: 700;
@@ -183,8 +183,8 @@
     }
 
     .hero h1 {
-      margin: 0 0 22px;
-      font-size: 84px;
+      margin: 0 0 20px;
+      font-size: 76px;
       line-height: 0.95;
       font-weight: 800;
       letter-spacing: -2px;
@@ -192,18 +192,37 @@
 
     .hero-lead {
       margin: 0 0 18px;
-      font-size: 27px;
-      line-height: 1.45;
+      font-size: 28px;
+      line-height: 1.35;
       font-weight: 400;
       color: rgba(255, 255, 255, 0.96);
     }
 
     .hero-sub {
-      margin: 0 0 34px;
-      max-width: 700px;
+      margin: 0 0 26px;
+      max-width: 760px;
       font-size: 20px;
       line-height: 1.8;
-      color: rgba(255, 255, 255, 0.9);
+      color: rgba(255, 255, 255, 0.90);
+    }
+
+    .hero-points {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 0 0 34px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .hero-points li {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.10);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      font-size: 14px;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.96);
     }
 
     .hero-actions {
@@ -240,17 +259,20 @@
     .btn-secondary {
       background: transparent;
       color: var(--white);
-      border: 1px solid rgba(255, 255, 255, 0.28);
+      border: 1px solid rgba(255, 255, 255, 0.30);
     }
 
     .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.10);
       transform: translateY(-1px);
     }
 
-    /* Sections */
     .section {
       padding: 100px 0;
+    }
+
+    .section-alt {
+      background: var(--bg-soft);
     }
 
     .section-title {
@@ -263,13 +285,12 @@
 
     .section-intro {
       margin: 0;
-      max-width: 900px;
+      max-width: 920px;
       font-size: 20px;
       line-height: 1.85;
       color: var(--muted);
     }
 
-    /* About */
     .about-wrap {
       display: grid;
       grid-template-columns: 1.15fr 0.85fr;
@@ -279,7 +300,12 @@
     }
 
     .about-card,
-    .about-highlight {
+    .about-highlight,
+    .target-card,
+    .card,
+    .project-item,
+    .contact-side,
+    .contact-panel {
       background: var(--white);
       border: 1px solid var(--border);
       border-radius: var(--radius);
@@ -301,6 +327,7 @@
       padding: 34px;
       background: linear-gradient(180deg, #17335f 0%, #10233f 100%);
       color: var(--white);
+      border-color: rgba(255,255,255,0.08);
     }
 
     .about-highlight h3 {
@@ -321,43 +348,53 @@
       color: rgba(255, 255, 255, 0.92);
     }
 
-    /* Services */
-    .services-grid {
+    .services-grid,
+    .targets-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 28px;
       margin-top: 36px;
     }
 
-    .card {
-      background: var(--white);
-      border-radius: var(--radius);
+    .card,
+    .target-card {
       padding: 34px 30px;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid var(--border);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .card:hover {
+    .card:hover,
+    .target-card:hover,
+    .project-item:hover {
       transform: translateY(-4px);
       box-shadow: var(--shadow);
     }
 
-    .card-number {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
+    .card-number,
+    .target-tag {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       margin-bottom: 18px;
       background: rgba(79, 141, 247, 0.12);
       color: var(--blue-dark);
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 800;
     }
 
-    .card h3 {
+    .card-number {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+    }
+
+    .target-tag {
+      min-height: 34px;
+      padding: 0 12px;
+      border-radius: 999px;
+    }
+
+    .card h3,
+    .target-card h3 {
       margin: 0 0 14px;
       font-size: 28px;
       line-height: 1.1;
@@ -365,14 +402,14 @@
       letter-spacing: -0.4px;
     }
 
-    .card p {
+    .card p,
+    .target-card p {
       margin: 0;
       font-size: 18px;
       line-height: 1.8;
       color: var(--muted);
     }
 
-    /* Projects */
     .projects-list {
       margin-top: 38px;
       display: flex;
@@ -381,18 +418,9 @@
     }
 
     .project-item {
-      background: var(--white);
-      border-radius: var(--radius);
       padding: 30px 32px;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid var(--border);
       border-left: 5px solid var(--navy-2);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .project-item:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow);
     }
 
     .project-status {
@@ -435,10 +463,9 @@
       text-decoration: underline;
     }
 
-    /* Contact */
     .contact-box {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
+      grid-template-columns: 1.2fr 0.8fr;
       gap: 28px;
       background: linear-gradient(135deg, #16325c 0%, #10233f 100%);
       color: var(--white);
@@ -449,53 +476,105 @@
 
     .contact-main h2 {
       margin: 0 0 16px;
-      font-size: 42px;
+      font-size: 46px;
       line-height: 1.05;
-      letter-spacing: -0.8px;
+      letter-spacing: -1px;
+      color: var(--white);
     }
 
     .contact-main p {
-      margin: 0;
+      margin: 0 0 18px;
       font-size: 19px;
       line-height: 1.8;
       color: rgba(255, 255, 255, 0.92);
     }
 
-    .contact-info {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 16px;
-      padding: 26px 24px;
+    .contact-points {
+      margin: 24px 0 30px;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 12px;
     }
 
-    .contact-info h3 {
-      margin: 0 0 18px;
-      font-size: 22px;
-      line-height: 1.2;
-    }
-
-    .contact-line {
-      margin-bottom: 14px;
+    .contact-points li {
+      position: relative;
+      padding-left: 18px;
       font-size: 17px;
       line-height: 1.7;
       color: rgba(255, 255, 255, 0.95);
     }
 
-    .contact-line strong {
-      display: inline-block;
-      min-width: 90px;
+    .contact-points li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 11px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #7db2ff;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    .contact-panel {
+      padding: 28px 24px;
+      background: rgba(255, 255, 255, 0.10);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: none;
+    }
+
+    .contact-panel h3 {
+      margin: 0 0 18px;
+      font-size: 24px;
+      line-height: 1.2;
       color: var(--white);
     }
 
-    .contact-line a {
+    .contact-mini {
+      margin: 0 0 20px;
+      font-size: 16px;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.90);
+    }
+
+    .info-list {
+      display: grid;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    .info-item {
+      padding: 14px 14px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .info-item strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 15px;
       color: var(--white);
     }
 
-    .contact-line a:hover {
+    .info-item span,
+    .info-item a {
+      font-size: 15px;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    .info-item a:hover {
       text-decoration: underline;
     }
 
-    /* Footer */
     .footer {
       margin-top: 0;
       text-align: center;
@@ -505,14 +584,13 @@
       font-size: 15px;
     }
 
-    /* Responsive */
     @media (max-width: 1100px) {
       .container {
         padding: 0 28px;
       }
 
       .hero h1 {
-        font-size: 66px;
+        font-size: 60px;
       }
 
       .hero-lead {
@@ -525,7 +603,8 @@
 
       .about-wrap,
       .contact-box,
-      .services-grid {
+      .services-grid,
+      .targets-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -565,7 +644,7 @@
       }
 
       .hero {
-        min-height: 700px;
+        min-height: 710px;
       }
 
       .hero-content {
@@ -573,7 +652,7 @@
       }
 
       .hero h1 {
-        font-size: 48px;
+        font-size: 44px;
         letter-spacing: -1.2px;
       }
 
@@ -596,16 +675,19 @@
       .section-intro,
       .about-card p,
       .card p,
+      .target-card p,
       .project-item p,
       .contact-main p {
         font-size: 17px;
       }
 
       .card,
+      .target-card,
       .project-item,
       .about-card,
       .about-highlight,
-      .contact-box {
+      .contact-box,
+      .contact-panel {
         padding: 28px 24px;
       }
 
@@ -617,8 +699,18 @@
         width: 100%;
       }
 
-      .hero-actions {
+      .hero-actions,
+      .contact-actions {
         align-items: stretch;
+      }
+
+      .hero-points {
+        gap: 10px;
+      }
+
+      .hero-points li {
+        width: 100%;
+        border-radius: 12px;
       }
     }
   </style>
@@ -646,15 +738,22 @@
   <section class="hero" id="home">
     <div class="container hero-content">
       <div class="hero-text">
-        <div class="eyebrow">Exterior Installation Specialists</div>
-        <h1>Precision<br>Installation</h1>
-        <p class="hero-lead">Window Wall, Curtain Wall, and Glass Canopy Systems</p>
+        <div class="eyebrow">Independent Façade Installation Partner</div>
+        <h1>Already Have the Product?<br>We’ll Handle the Installation.</h1>
+        <p class="hero-lead">For owner-supply projects, window suppliers, and international manufacturers entering the Canadian market.</p>
         <div class="hero-sub">
-          Professional exterior installation for high-rise residential and commercial projects, with a focus on reliable execution, practical coordination, and quality workmanship.
+          Profacade provides professional installation for window wall, curtain wall, glass canopy, and related exterior façade systems — whether the product is sourced locally or imported from Asia or Europe.
         </div>
 
+        <ul class="hero-points">
+          <li>Owner-Supply General Contractors</li>
+          <li>Window & Façade Suppliers</li>
+          <li>International Manufacturers</li>
+          <li>Local and Imported Systems</li>
+        </ul>
+
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#contact">Request a Quote</a>
+          <a class="btn btn-primary" href="#contact">Request Installation Quote</a>
           <a class="btn btn-secondary" href="#projects">View Projects</a>
         </div>
       </div>
@@ -665,58 +764,93 @@
     <div class="container">
       <h2 class="section-title">About Profacade</h2>
       <p class="section-intro">
-        Profacade Exterior Solutions Inc. specializes in the professional installation of window wall, curtain wall, and glass canopy systems for high-rise residential and commercial construction projects.
+        Profacade Exterior Solutions Inc. is an installation-focused façade partner specializing in window wall, curtain wall, glass canopy, and related exterior systems for high-rise residential and commercial projects.
       </p>
 
       <div class="about-wrap">
         <div class="about-card">
           <p>
-            We focus on dependable field execution, disciplined site coordination, and quality-driven installation. Our approach is practical, organized, and built around the realities of active construction sites, helping projects move forward with clear communication and reliable performance.
+            Our role is simple and valuable: when the project team already has the system, supplier, or product source in place, Profacade delivers the field installation. We support projects that require a dependable installation contractor capable of coordinating site realities, sequencing work properly, and executing with consistency and professionalism.
           </p>
         </div>
 
         <div class="about-highlight">
-          <h3>What We Deliver</h3>
+          <h3>Why Clients Work With Us</h3>
           <ul>
-            <li>Reliable installation of façade systems for high-rise projects</li>
-            <li>Practical coordination with site teams and project stakeholders</li>
-            <li>Strong attention to workmanship, sequencing, and execution</li>
-            <li>Professional support for bidding, planning, and installation delivery</li>
+            <li>Installation support for both locally sourced and imported façade systems</li>
+            <li>Strong fit for owner-supply procurement structures and supplier-led projects</li>
+            <li>Practical coordination with general contractors, manufacturers, and site teams</li>
+            <li>Reliable field execution for high-rise and technically demanding installations</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section" id="services">
+  <section class="section section-alt" id="services">
     <div class="container">
       <h2 class="section-title">Services</h2>
       <p class="section-intro">
-        We provide installation services tailored to the needs of complex exterior envelope and façade scopes.
+        We provide installation services tailored to projects where the system has already been selected, supplied, or imported and a capable site installation partner is required.
       </p>
 
       <div class="services-grid">
         <div class="card">
           <div class="card-number">01</div>
-          <h3>Window Wall</h3>
+          <h3>Window Wall Installation</h3>
           <p>
-            Professional installation of window wall systems for high-rise residential and mixed-use developments, with careful attention to sequencing, access, and site conditions.
+            Professional installation of window wall systems for high-rise residential and mixed-use developments, with careful attention to access, sequencing, and site conditions.
           </p>
         </div>
 
         <div class="card">
           <div class="card-number">02</div>
-          <h3>Curtain Wall</h3>
+          <h3>Curtain Wall Installation</h3>
           <p>
-            Field installation of curtain wall systems including layout, coordination, installation sequencing, and exterior glazing support for demanding project environments.
+            Field installation of curtain wall systems including layout, coordination, sequencing, and exterior glazing support for complex project environments.
           </p>
         </div>
 
         <div class="card">
           <div class="card-number">03</div>
-          <h3>Glass Canopy</h3>
+          <h3>Glass Canopy & Exterior Features</h3>
           <p>
-            Installation of exterior glass canopy systems for entrances, podiums, and architectural façade features, executed with a practical focus on safety and detailing.
+            Installation of glass canopy systems and related exterior façade components for entrances, podiums, and architectural feature areas requiring disciplined execution.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="who-we-work-with">
+    <div class="container">
+      <h2 class="section-title">Who We Work With</h2>
+      <p class="section-intro">
+        Our service model is designed for clients who need a reliable installation partner without being restricted to one product source or one supply channel.
+      </p>
+
+      <div class="targets-grid">
+        <div class="target-card">
+          <div class="target-tag">01 Target Client</div>
+          <h3>Owner-Supply General Contractors</h3>
+          <p>
+            We support GCs who procure façade systems directly and require a professional installation partner to deliver dependable field execution on site.
+          </p>
+        </div>
+
+        <div class="target-card">
+          <div class="target-tag">02 Target Client</div>
+          <h3>Window & Façade Suppliers</h3>
+          <p>
+            We work with suppliers who need an experienced installation team to execute their systems for high-rise, mixed-use, and technically demanding projects.
+          </p>
+        </div>
+
+        <div class="target-card">
+          <div class="target-tag">03 Target Client</div>
+          <h3>International Manufacturers</h3>
+          <p>
+            We help overseas manufacturers from Asia and Europe enter the Canadian market with a trusted local installation partner for project delivery.
           </p>
         </div>
       </div>
@@ -737,7 +871,7 @@
           <p>
             High-rise residential tower located in downtown Vancouver. Profacade is currently installing the window wall, curtain wall, and glass canopy systems for this project.
           </p>
-          <a class="project-link" href="https://www.landaglobal.com/lucent/" target="_blank">View Project →</a>
+          <a class="project-link" href="https://www.landaglobal.com/lucent/" target="_blank" rel="noopener noreferrer">View Project →</a>
         </div>
 
         <div class="project-item">
@@ -746,7 +880,7 @@
           <p>
             Luxury residential tower designed by Kengo Kuma, located in downtown Vancouver. Profacade is currently installing the window wall, curtain wall, and glass canopy systems for this project.
           </p>
-          <a class="project-link" href="https://www.landaglobal.com/1818alberni/" target="_blank">View Project →</a>
+          <a class="project-link" href="https://www.landaglobal.com/1818alberni/" target="_blank" rel="noopener noreferrer">View Project →</a>
         </div>
 
         <div class="project-item">
@@ -755,7 +889,7 @@
           <p>
             Premium residential development located in Vancouver’s Point Grey neighborhood. Profacade completed the installation of the window wall, curtain wall, and glass canopy systems for this project.
           </p>
-          <a class="project-link" href="https://www.landaglobal.com/projects/alma-10th/" target="_blank">View Project →</a>
+          <a class="project-link" href="https://www.landaglobal.com/projects/alma-10th/" target="_blank" rel="noopener noreferrer">View Project →</a>
         </div>
       </div>
     </div>
@@ -765,16 +899,56 @@
     <div class="container">
       <div class="contact-box">
         <div class="contact-main">
-          <h2>Contact</h2>
+          <h2>Need Installation Support for Your Façade Package?</h2>
           <p>
-            For project inquiries, tender invitations, and quotation requests, please contact us using the email addresses below.
+            Whether you are a general contractor managing an owner-supply project, a window supplier looking for a site installation team, or an international manufacturer entering Canada, Profacade can support your installation scope.
           </p>
+          <p>
+            From locally sourced systems to imported façade products from Asia and Europe, we help move your project from supplied product to completed installation.
+          </p>
+
+          <ul class="contact-points">
+            <li>Independent installation support for local and imported systems</li>
+            <li>Strong fit for owner-supply and supplier-led project structures</li>
+            <li>Practical site coordination, sequencing, and field execution</li>
+            <li>Professional support for pricing inquiries, tender invitations, and project discussions</li>
+          </ul>
+
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="mailto:estimating@profacade.ca?subject=Request%20for%20Installation%20Quote">Request Installation Quote</a>
+            <a class="btn btn-secondary" href="mailto:info@profacade.ca?subject=Project%20Inquiry">General Inquiry</a>
+          </div>
         </div>
 
-        <div class="contact-info">
-          <h3>Get in Touch</h3>
-          <div class="contact-line"><strong>General:</strong> <a href="mailto:info@profacade.ca">info@profacade.ca</a></div>
-          <div class="contact-line"><strong>Quotes:</strong> <a href="mailto:estimating@profacade.ca">estimating@profacade.ca</a></div>
+        <div class="contact-panel">
+          <h3>Start Your Inquiry</h3>
+          <p class="contact-mini">
+            Send us your project details, product type, and expected schedule. We will review your inquiry and follow up regarding installation scope and next steps.
+          </p>
+
+          <div class="info-list">
+            <div class="info-item">
+              <strong>Best For</strong>
+              <span>Owner-supply projects, supplier-led packages, and imported façade systems</span>
+            </div>
+
+            <div class="info-item">
+              <strong>Typical Scope</strong>
+              <span>Window wall, curtain wall, glass canopy, and related exterior installation</span>
+            </div>
+
+            <div class="info-item">
+              <strong>Quote Requests</strong>
+              <a href="mailto:estimating@profacade.ca">estimating@profacade.ca</a>
+            </div>
+
+            <div class="info-item">
+              <strong>General Inquiries</strong>
+              <a href="mailto:info@profacade.ca">info@profacade.ca</a>
+            </div>
+          </div>
+
+          <a class="btn btn-primary" href="mailto:estimating@profacade.ca?subject=Request%20for%20Installation%20Quote&body=Company%20Name%3A%0AContact%20Name%3A%0AEmail%3A%0APhone%3A%0AProject%20Name%3A%0AProject%20Location%3A%0AProduct%20Type%3A%0AProject%20Stage%3A%0ARequired%20Installation%20Scope%3A%0AEstimated%20Start%20Date%3A%0AMessage%3A%0A">Get a Quote</a>
         </div>
       </div>
     </div>
